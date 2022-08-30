@@ -1,6 +1,7 @@
 // Import stylesheets
 import './style.css';
 import { Cookie } from './models/Cookie';
+import { Colour } from './models/Colour';
 
 //test
 
@@ -54,7 +55,7 @@ function drawCookies() {
   for (let i = 0; i < cookies.length; i++) {
     let newDiv = document.createElement('div') as HTMLDivElement;
     newDiv.classList.add('cookie');
-    newDiv.style.backgroundColor = cookies[i].colour.toString();
+    newDiv.style.backgroundColor = Colour[cookies[i].colour].toString();
     let chocChipNum: string = cookies[i].chocolateChipNum.toString();
     let cookieText = document.createTextNode(chocChipNum);
     newDiv.appendChild(cookieText);
@@ -71,6 +72,7 @@ function changeColour() {
     'cookieColour-inp'
   ) as HTMLInputElement;
   selectedCookie.colour = Colour[inputBox.value.toLowerCase()];
+  console.log(Colour[cookies[1].colour].toString());
   updateDisplay();
 }
 

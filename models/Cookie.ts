@@ -1,3 +1,4 @@
+import { Colour } from './Colour';
 export class Cookie {
   //TODO - Cookies have three attributes; name, colour, chocolateChipNum
   // colour is a string
