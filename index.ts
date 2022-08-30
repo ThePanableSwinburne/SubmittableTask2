@@ -28,11 +28,11 @@ function init() {
   addCookieButton.addEventListener('click', addChocolateChip);
 
   cookies.push(new Cookie('Cookie1'), new Cookie('Cookie2'));
-  cookies[1].colour = 'black';
+  cookies[1].colour = Colour.black;
 
   // initialise the cookieColour-inp to the colour of the first cookie created
   const input = document.getElementById('cookieColour-inp') as HTMLInputElement;
-  input.value = cookies[0].colour;
+  input.value = cookies[0].colour.toString();
 
   let opt1 = document.createElement('option');
   let opt2 = document.createElement('option');
@@ -54,7 +54,7 @@ function drawCookies() {
   for (let i = 0; i < cookies.length; i++) {
     let newDiv = document.createElement('div') as HTMLDivElement;
     newDiv.classList.add('cookie');
-    newDiv.style.backgroundColor = cookies[i].colour;
+    newDiv.style.backgroundColor = cookies[i].colour.toString();
     let chocChipNum: string = cookies[i].chocolateChipNum.toString();
     let cookieText = document.createTextNode(chocChipNum);
     newDiv.appendChild(cookieText);
@@ -70,7 +70,7 @@ function changeColour() {
   let inputBox: HTMLInputElement = document.getElementById(
     'cookieColour-inp'
   ) as HTMLInputElement;
-  selectedCookie.colour = inputBox.value;
+  selectedCookie.colour = Colour[inputBox.value.toLowerCase()];
   updateDisplay();
 }
 

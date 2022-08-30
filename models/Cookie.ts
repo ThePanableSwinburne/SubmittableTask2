@@ -4,12 +4,12 @@ export class Cookie {
   // There is one constructor which takes a name as a parameter.  Initialise colour to brown and chocolateChipNum to 0
 
   name: string;
-  colour: string;
+  colour: Colour;
   chocolateChipNum: number;
 
   constructor(name: string) {
     this.name = name;
-    this.colour = 'brown';
+    this.colour = Colour.black;
     this.chocolateChipNum = 0;
   }
 }
